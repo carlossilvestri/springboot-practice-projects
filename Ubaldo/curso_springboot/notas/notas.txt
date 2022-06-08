@@ -1,0 +1,8 @@
+INICIALIZAR EL PROYECTO DE SPRINGBOOT
+
+1.- Inicializar el proyecto en https://start.spring.io/
+2.- Nunca utilizar las versiones que dicen SNAPSHOT, ya que no son versiones estables de spring.
+3.- 
+
+DEPENDECIAS BASICAS NECESARIAS
+1.- Spring Boot DevTools, Lombok, Spring Web, Thymeleaf.

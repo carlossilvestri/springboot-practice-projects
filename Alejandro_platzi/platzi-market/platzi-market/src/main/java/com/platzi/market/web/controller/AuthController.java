@@ -4,6 +4,7 @@ import com.platzi.market.domain.dto.AuthenticationRequest;
 import com.platzi.market.domain.dto.AuthenticationResponse;
 import com.platzi.market.domain.service.PlatziUserDetailsService;
 import com.platzi.market.web.security.JWTUtil;
+import io.jsonwebtoken.Claims;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,9 +43,10 @@ public class AuthController {
 
             UserDetails userDetails = platziUserDetailsService.loadUserByUsername(request.getUsername());
             String jwt = jwtUtil.generateToken(userDetails);
-            return new ResponseEntity<>( new AuthenticationResponse(jwt) , HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>( new AuthenticationResponse(jwt) , HttpStatus.OK);
         }catch(BadCredentialsException e){
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
     }
+
 }
